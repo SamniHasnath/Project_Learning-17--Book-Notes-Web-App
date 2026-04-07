@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reading Journal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <!-- 🔝 NAVBAR -->
+  <div class="navbar">
+    <h1>📚 Reading Journal</h1>
+    <a href="/add" class="btn">+ Add Book</a>
+    <button onclick="toggleDark()" class="btn">🌙</button>
+  </div>
+
+  <div class="container">
+
+    <!-- 🔍 SEARCH + SORT -->
+    <div class="top-bar">
+
+      <input type="text" placeholder="Search books..." class="search-input" />
+
+      <div class="sort-bar">
+        <a href="/?sort=rating" class="<%= sort === 'rating' ? 'active' : '' %>">Rating</a>
+        <a href="/" class="<%= sort !== 'rating' ? 'active' : '' %>">Newest</a>
+      </div>
+
+    </div>
+
+    <!-- 📚 BOOK LIST -->
+    <% if (books.length === 0) { %>
+      <div class="empty">
+        <p>No books yet. Start by adding one 📖</p>
+      </div>
+    <% } %>
+
+    <% books.forEach(book => { %>
+      <div class="book-card">
+<div class="cover">
+  <% if(book.cover_id) { %>
+    <img src="https://covers.openlibrary.org/b/id/<%= book.cover_id %>-M.jpg" alt="Cover">
+  <% } else { %>
+    <div style="width:140px; height:210px; background:#e0e0e0; display:flex; align-items:center; justify-content:center; border-radius:8px; color:#777; font-size:0.8rem; text-align:center; padding:10px;">
+        No Cover Available
+    </div>
+  <% } %>
+</div>
+        <div class="book-info">
+
+          <div class="book-header">
+            <h2><%= book.title %></h2>
+            <span class="rating">★ <%= book.rating %></span>
+          </div>
+
+          <p class="author">by <%= book.author %></p>
+
+          <p class="notes"><%= book.notes %></p>
+
+          <div class="actions">
+            <a href="/edit/<%= book.id %>">Edit</a>
+            <form action="/delete/<%= book.id %>" method="POST">
+              <button>Delete</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    <% }) %>
+
+  </div>
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("dark", document.body.classList.contains("dark"));
+}
+
+window.onload = () => {
+  if (localStorage.getItem("dark") === "true") {
+    document.body.classList.add("dark");
+  }
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Add Book</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>➕ Add New Book</h1>
+    <a href="/" class="btn">← Back</a>
+  </div>
+
+  <div class="container">
+
+    <form action="/add" method="POST" class="form-card">
+
+      <label>Book Title</label>
+      <input type="text" name="title" placeholder="Enter book title" required>
+
+      <label>Author</label>
+      <input type="text" name="author" placeholder="Enter author name" required>
+
+      <label>Rating (1–10)</label>
+      <input type="number" name="rating" min="1" max="10" required>
+<label>ISBN</label>
+<input 
+  type="text" 
+  name="isbn" 
+  placeholder="Enter ISBN (e.g. 9780143124177)" 
+  required
+>
+      <label>Your Notes</label>
+      <textarea name="notes" rows="8" placeholder="Write your thoughts..." required></textarea>
+
+      <button type="submit" class="btn full-btn">Save Book</button>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Edit Notes</title>
+</head>
+
+<body>
+
+  <!-- 🔝 NAVBAR -->
+  <div class="navbar">
+    <h1>✏️ Edit Notes</h1>
+    <a href="/" class="btn">← Back</a>
+  </div>
+
+  <div class="container">
+
+    <!-- 📘 BOOK INFO -->
+    <div class="edit-book-card">
+      <h2><%= book.title %></h2>
+      <p class="author">by <%= book.author %></p>
+    </div>
+
+    <!-- 📝 FORM -->
+    <form action="/edit/<%= book.id %>" method="POST" class="edit-form">
+
+      <label>Rating (1–10)</label>
+      <input 
+        type="number" 
+        name="rating" 
+        value="<%= book.rating %>" 
+        min="1" 
+        max="10" 
+        required
+      >
+
+      <label>Your Notes</label>
+      <textarea 
+        name="notes" 
+        rows="10" 
+        required
+      ><%= book.notes %></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Save Changes</button>
+        <a href="/" class="cancel-btn">Cancel</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

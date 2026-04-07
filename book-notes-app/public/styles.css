@@ -1,0 +1,287 @@
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --danger: #dc2626;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+/* BUTTON */
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* SEARCH */
+.search-input {
+  padding: 10px;
+  width: 50%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* SORT */
+.sort-bar a {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.sort-bar a.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* BOOK CARD */
+.book-card {
+  display: flex;
+  gap: 20px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+}
+
+/* IMAGE */
+.book-card img {
+  width: 120px;
+  border-radius: 8px;
+}
+
+/* INFO */
+.book-info {
+  flex: 1;
+}
+
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  background: #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.author {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.notes {
+  margin-top: 10px;
+}
+
+/* ACTIONS */
+.actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+}
+
+/* EMPTY STATE */
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+}
+
+/* EDIT PAGE CARD */
+.edit-book-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* FORM */
+.edit-form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* LABEL */
+.edit-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* INPUT */
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+/* FOCUS EFFECT */
+.edit-form input:focus,
+.edit-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ACTION BUTTONS */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* CANCEL BUTTON */
+.cancel-btn {
+  text-decoration: none;
+  color: #64748b;
+}
+
+.cancel-btn:hover {
+  text-decoration: underline;
+}
+/* FORM CARD */
+.form-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+/* INPUTS */
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* FULL BUTTON */
+.full-btn {
+  width: 100%;
+  margin-top: 10px;
+}/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .book-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-card img {
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+  }
+
+  .form-card {
+    margin: 10px;
+  }
+}
+/* 🌙 DARK MODE */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .navbar,
+body.dark .book-card,
+body.dark .form-card,
+body.dark .edit-form,
+body.dark .edit-book-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #0f172a;
+  color: white;
+  border-color: #334155;
+}
+
+body.dark .rating {
+  background: #334155;
+}

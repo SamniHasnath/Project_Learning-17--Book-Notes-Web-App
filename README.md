@@ -37,6 +37,5 @@ This project served as a deep dive into the **PERN stack** philosophy, focusing 
 * **Advanced CRUD:** Managing data relationships between book metadata and user notes.
 * **SQL Mastery:** Writing optimized PostgreSQL queries for sorting and filtering.
 * **API Integration:** Handling asynchronous API calls and external data flow.
-* **UI/UX Principles:** Designing a functional dashboard that prioritizes readability.
 
 ---

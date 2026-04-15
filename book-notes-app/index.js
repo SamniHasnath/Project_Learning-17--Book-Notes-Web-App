@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-// =====================
+
 // 1. HOME PAGE
 // =====================
 app.get("/", async (req, res) => {
